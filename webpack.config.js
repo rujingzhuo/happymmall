@@ -10,6 +10,12 @@ module.exports = {
         publicPath:'/dist/',
         filename: 'js/app.js'
     },
+    resolve:{
+        alias: {
+            page: path.resolve(__dirname,'src/page'),
+            component: path.resolve(__dirname,'src/component')
+        }
+    },
     module: {
         rules: [{
                 test: /\.jsx$/,
@@ -48,12 +54,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                test: /\.(woff|woff2|eot|svg|ttf|otf)$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                          limit: 8192,
+                          limit: 8189,
                           name: 'resource/[name].[ext]'
                         }
                     }
@@ -62,11 +68,15 @@ module.exports = {
         ]
     },
     devServer: {
-        port:"8086"
+        port:"8086",
+        historyApiFallback:{
+            index:'/dist/index.html'
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            favicon:'./favicon.ico'
         }),
         new ExtractTextPlugin("css/[name].css"),
         // 提出公共模块
