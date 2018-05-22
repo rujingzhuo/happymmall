@@ -13,8 +13,8 @@ class CategoryList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            list                : [],
-            parentCategoryId    : this.props.match.params.categoryId || 0
+            list : [],
+            parentCategoryId : this.props.match.params.categoryId || 0
         };
     }
     componentDidMount(){

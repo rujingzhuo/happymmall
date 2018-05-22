@@ -5,28 +5,28 @@ const _mm   = new MUtil();
 class Product{
     // 获取商品列表
     getProductList(listParam){
-        let url     = '',
-            data    = {};
+        let url = '',
+            data = {};
         if(listParam.listType === 'list'){
-            url                         = '/manage/product/list.do';
-            data.pageNum                = listParam.pageNum;
+            url = '/manage/product/list.do';
+            data.pageNum = listParam.pageNum;
         }else if(listParam.listType === 'search'){
             url = '/manage/product/search.do';
-            data.pageNum                = listParam.pageNum;
-            data[listParam.searchType]  = listParam.keyword;
+            data.pageNum = listParam.pageNum;
+            data[listParam.searchType] = listParam.keyword;
         }
         return _mm.request({
-            type    : 'post',
-            url     : url,
-            data    : data
+            type : 'post',
+            url : url,
+            data : data
         });
     }
     // 获取商品详情
     getProduct(productId){
         return _mm.request({
-            type    : 'post',
-            url     : '/manage/product/detail.do',
-            data    : {
+            type : 'post',
+            url : '/manage/product/detail.do',
+            data : {
                 productId : productId || 0
             }
         });
@@ -34,9 +34,9 @@ class Product{
     // 变更商品销售状态
     setProductStatus(productInfo){
         return _mm.request({
-            type    : 'post',
-            url     : '/manage/product/set_sale_status.do',
-            data    : productInfo
+            type : 'post',
+            url : '/manage/product/set_sale_status.do',
+            data : productInfo
         });
     }
     // 检查保存商品的表单数据
@@ -86,9 +86,9 @@ class Product{
     // 保存商品
     saveProduct(product){
         return _mm.request({
-            type    : 'post',
-            url     : '/manage/product/save.do',
-            data    : product
+            type : 'post',
+            url : '/manage/product/save.do',
+            data : product
         });
     }
     /*
@@ -97,9 +97,9 @@ class Product{
     // 根据父品类id获取品类列表
     getCategoryList(parentCategoryId){
         return _mm.request({
-            type    : 'post',
-            url     : '/manage/category/get_category.do',
-            data    : {
+            type : 'post',
+            url : '/manage/category/get_category.do',
+            data : {
                 categoryId : parentCategoryId || 0
             }
         });
@@ -107,17 +107,17 @@ class Product{
     // 新增品类
     saveCategory(category){
         return _mm.request({
-            type    : 'post',
-            url     : '/manage/category/add_category.do',
-            data    : category
+            type : 'post',
+            url : '/manage/category/add_category.do',
+            data : category
         });
     }
     // 修改品类名称
     updateCategoryName(category){
         return _mm.request({
-            type    : 'post',
-            url     : '/manage/category/set_category_name.do',
-            data    : category
+            type : 'post',
+            url : '/manage/category/set_category_name.do',
+            data : category
         });
     }
 }

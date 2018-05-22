@@ -13,16 +13,16 @@ class ProductDetail extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            id                  : this.props.match.params.pid,
-            name                : '',
-            subtitle            : '',
-            categoryId          : 0,
-            parentCategoryId    : 0,
-            subImages           : [],
-            price               : '',
-            stock               : '',
-            detail              : '',
-            status              : 1 //商品状态1为在售
+            id : this.props.match.params.pid,
+            name : '',
+            subtitle : '',
+            categoryId : 0,
+            parentCategoryId : 0,
+            subImages : [],
+            price : '',
+            stock : '',
+            detail : '',
+            status : 1 //商品状态1为在售
         }
     }
     componentDidMount(){

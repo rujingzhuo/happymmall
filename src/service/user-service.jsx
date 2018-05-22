@@ -37,15 +37,15 @@ class User{
     // 退出登录
     logout(){
         return _mm.request({
-            type    : 'post',
-            url     : '/user/logout.do'
+            type : 'post',
+            url : '/user/logout.do'
         });
     }
     getUserList(pageNum){
         return _mm.request({
-            type    : 'post',
-            url     : '/manage/user/list.do',
-            data    : {
+            type : 'post',
+            url : '/manage/user/list.do',
+            data : {
                 pageNum : pageNum
             }
         });

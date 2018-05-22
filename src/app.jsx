@@ -6,9 +6,9 @@ import Layout from 'component/layout/index.jsx';
 
 import Home from 'page/home/index.jsx';
 import Login from 'page/login/index.jsx';
-import ProductRouter    from 'page/product/router.jsx';
-import OrderList        from 'page/order/index.jsx';
-import OrderDetail      from 'page/order/detail.jsx';
+import ProductRouter from 'page/product/router.jsx';
+import OrderList from 'page/order/index.jsx';
+import OrderDetail  from 'page/order/detail.jsx';
 import UserList from 'page/user/index.jsx';
 import ErrorPage from 'page/error/index.jsx';
 
